@@ -1,0 +1,17 @@
+.searchBar {
+  padding: 2px 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 300px;
+  height: 40px;
+  margin: 4px;
+}
+
+.input {
+  margin-left: 20px;
+}
+
+.iconButton {
+  padding: 10px;
+}

@@ -1,0 +1,15 @@
+@import "../../utils/Colors.scss";
+.swipeDrawer {
+  background-color: $light-grey-color;
+  position: fixed;
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.swipeDrawer.dark-mode {
+  background-color: $dark-grey-color;
+}

@@ -1,0 +1,36 @@
+@import "../../utils/Colors.scss";
+.weatherInfo {
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cityName,
+.weatherDescription {
+  text-transform: uppercase;
+}
+
+.icon {
+  height: 100px;
+  width: auto;
+}
+
+#textPrimary {
+  color: $light-primary-color;
+  font-size: 40px;
+}
+
+#textPrimary.dark-mode {
+  color: $dark-primary-color;
+}
+
+#textSecondary {
+  color: $light-secondary-color;
+  font-size: 20px;
+  text-transform: none;
+}
+
+#textSecondary.dark-mode {
+  color: $dark-secondary-color;
+}

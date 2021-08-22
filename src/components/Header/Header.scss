@@ -1,0 +1,24 @@
+@import "../../utils//Colors.scss";
+
+#head {
+  background-color: $light-grey-color;
+  color: $light-text-color;
+}
+
+#head.dark-mode {
+  background-color: $dark-grey-color;
+  color: $dark-text-color;
+}
+.head__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#selectValue {
+  color: $light-text-color;
+}
+
+#selectValue.dark-mode {
+  color: $dark-text-color;
+}

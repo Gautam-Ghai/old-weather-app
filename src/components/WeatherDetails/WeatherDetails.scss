@@ -1,0 +1,52 @@
+@import "../../utils/Colors.scss";
+
+.weatherDetails {
+  margin: auto 3.5rem;
+  margin-bottom: 30px;
+}
+
+.weatherDetailsRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.weatherDetailsRowInside {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.weatherDetailsBox {
+  flex: 1;
+  padding: 20px;
+}
+
+.weatherDetailsItems {
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.text {
+  text-transform: none;
+}
+
+.weatherDetailsIcon {
+  color: $light-primary-color;
+  margin-right: 1.2rem;
+}
+
+.weatherDetailsIcon.dark-mode {
+  color: $dark-primary-color;
+}
+
+.weatherSeconday {
+  color: $light-secondary-color;
+  text-transform: none;
+}
+
+.weatherSecondary.dark-mode {
+  color: $dark-secondary-color;
+}

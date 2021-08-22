@@ -1,0 +1,17 @@
+@import "../../utils/Colors.scss";
+
+.swipeButton {
+  border: none;
+  border-radius: 10px;
+  box-shadow: none;
+  margin: 15px;
+  padding: 5px;
+  width: 50px;
+  max-height: 15px;
+  z-index: 1;
+  background-color: $light-text-color;
+}
+
+.swipeButton.dark-mode {
+  background-color: $dark-text-color;
+}

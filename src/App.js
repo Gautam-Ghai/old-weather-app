@@ -4,7 +4,7 @@ import axios from "axios";
 
 //Components
 import SearchBar from "./utils/SearchBar/SearchBar";
-import SwipeUpButton from "./components/SwipeUpButton/SwipeUpButton";
+import SwipeUpButton from "./utils/SwipeUpButton/SwipeUpButton";
 import SwipeUpDrawer from "./components/SwipeUpDrawer/SwipeUpDrawer";
 import Header from "./components/Header/Header";
 import WeatherInfo from "./components/WeatherInfo/WeatherInfo";
@@ -30,6 +30,7 @@ function App() {
     if (getTheme === "dark") {
       setThemeState(true);
     }
+
     if (city === "") {
       load();
     } else {
@@ -133,10 +134,6 @@ function App() {
   }, [error]);
 
   if (weather) {
-    const {
-      main: { temp },
-    } = weather;
-
     return (
       <div>
         <Header

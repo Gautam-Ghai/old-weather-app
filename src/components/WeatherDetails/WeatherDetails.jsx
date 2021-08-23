@@ -74,7 +74,7 @@ function WeatherDetails({ weather, units, theme }) {
           <span className="weatherDetailsRowInside">
             <SpeedIcon className="weatherDetailsIcon" />
             <span className="weatherDetailsItems">
-              <p className="text">Humidity:</p>
+              <p className="text">Pressure:</p>
               <p className="weatherSecondary">{pressure} hPa</p>
             </span>
           </span>

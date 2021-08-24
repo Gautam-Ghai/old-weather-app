@@ -17,6 +17,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 const WEATHER_API_KEY = "4c262a856a5c5d1cbc78c723bdc58d38";
 const BASE_WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?";
 
+
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [themeState, setThemeState] = useState(false);
@@ -78,7 +79,7 @@ function App() {
   }
 
   function errors(err) {
-    setError(`ERROR(${err.code}): ${err.message}`);
+    setError("Permission Denied");
   }
 
   function onSubmit(city) {
@@ -123,7 +124,7 @@ function App() {
         setError("Location not Available");
       }
     } catch (err) {
-      setError(err);
+      setError("Permission Denied");
     }
   }
 
@@ -133,9 +134,8 @@ function App() {
     }
   }, [error]);
 
-  if (weather) {
-    return (
-      <div>
+  return (
+<div>
         <Header
           theme={themeState}
           setTheme={setThemeState}
@@ -145,81 +145,23 @@ function App() {
           setCity={setCity}
           onSubmit={onSubmit}
         />
-        <div>
+        {weather ? (
+          <div>
           <WeatherInfo weather={weather} theme={themeState} />
           <WeatherDetails weather={weather} units={units} theme={themeState} />
         </div>
-        <Hidden smUp>
-          <SwipeUpDrawer
-            onOpen={onOpen}
-            isOpen={isOpen}
-            onClose={onClose}
-            theme={themeState}
-          >
-            <SwipeUpButton onClick={onToggle} theme={themeState} />
-            <section style={{ marginTop: 100 }}>
-              <SearchBar
-                theme={themeState}
-                city={city}
-                setCity={setCity}
-                onSubmit={onSubmit}
-              />
-            </section>
-          </SwipeUpDrawer>
-        </Hidden>
-      </div>
-    );
-  } else if (error) {
-    return (
-      <div>
-        <Header
-          theme={themeState}
-          setTheme={setThemeState}
-          setUnits={setUnits}
-          load={load}
-          city={city}
-          setCity={setCity}
-          onSubmit={onSubmit}
-        />
-        <p className="message">
+        ) :(
+          error ? (
+              <p className="message">
           We don't have the access to your location. But you can still serach a
           city.
         </p>
-        <Hidden smUp>
-          <SwipeUpDrawer
-            onOpen={onOpen}
-            isOpen={isOpen}
-            onClose={onClose}
-            theme={themeState}
-          >
-            <SwipeUpButton onClick={onToggle} theme={themeState} />
-            <section style={{ marginTop: 100 }}>
-              <SearchBar
-                theme={themeState}
-                city={city}
-                setCity={setCity}
-                onSubmit={onSubmit}
-              />
-            </section>
-          </SwipeUpDrawer>
-        </Hidden>
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <Header
-          theme={themeState}
-          setTheme={setThemeState}
-          setUnits={setUnits}
-          load={load}
-          city={city}
-          setCity={setCity}
-          onSubmit={onSubmit}
-        />
-        <span className="progress">
+          ) : (
+            <span className="progress">
           <CircularProgress size={50} />
         </span>
+          )
+        )}
         <Hidden smUp>
           <SwipeUpDrawer
             onOpen={onOpen}
@@ -227,7 +169,7 @@ function App() {
             onClose={onClose}
             theme={themeState}
           >
-            <SwipeUpButton onClick={onToggle} theme={themeState} />
+        <SwipeUpButton onClick={onToggle} theme={themeState} />
             <section style={{ marginTop: 100 }}>
               <SearchBar
                 theme={themeState}
@@ -238,9 +180,8 @@ function App() {
             </section>
           </SwipeUpDrawer>
         </Hidden>
-      </div>
-    );
-  }
+        </div>
+  )
 }
 
 export default App;
